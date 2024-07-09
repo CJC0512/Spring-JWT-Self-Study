@@ -1,0 +1,22 @@
+server:
+  port: 8098
+
+spring:
+  application:
+    name: SpringJWT
+  datasource:
+    driver-class-name: org.mariadb.jdbc.Driver
+    url: jdbc:mariadb://localhost:3306/springjwt
+    username: springjwt
+    password: springjwt
+  jpa:
+    generate-ddl: false
+    show-sql: true
+    database: mysql
+    properties:
+      hibernate:
+        '[format_sql]': true
+    hibernate:
+      ddl-auto: none      # create ? none?? ????. ???? ???? ????.
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
