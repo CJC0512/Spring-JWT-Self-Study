@@ -1,12 +1,12 @@
 package com.bcd.springjwt.aggregate;
 
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
-@Entity
+@ToString
+@NoArgsConstructor
 @Getter
-@Setter
+@Entity
 public class UserEntity {
 
     @Id
@@ -18,4 +18,20 @@ public class UserEntity {
     private String password;
 
     private String role;
+
+    @Builder
+    public UserEntity(int id, String username, String password, String role) {
+        this.id = id;
+        this.username = username;
+        this.password = password;
+        this.role = role;
+    }
+
+    public void savePassword(String password) {
+        this.password = password;
+    }
+
+    public void setRoleAdmin() {
+        this.role = "ROLE_ADMIN";
+    }
 }
