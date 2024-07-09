@@ -1,4 +1,4 @@
-package com.bcd.springjwt.domain.user.aggregate;
+package com.bcd.springjwt.aggregate;
 
 import jakarta.persistence.*;
 import lombok.Getter;
