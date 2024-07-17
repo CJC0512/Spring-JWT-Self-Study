@@ -1,5 +1,6 @@
 package com.bcd.springjwt.config;
 
+import com.bcd.springjwt.jwt.JWTFilter;
 import com.bcd.springjwt.jwt.JWTUtil;
 import com.bcd.springjwt.jwt.LoginFilter;
 import org.springframework.context.annotation.Bean;
@@ -63,6 +64,10 @@ public class SecurityConfig {
                         .requestMatchers("/login", "/", "/join").permitAll()        // 모두 허용되는 경로
                         .requestMatchers("/admin").hasRole("ADMIN")                     // admin 경로는 ADMIN 권한을 가진 사용자만 접근 가능
                         .anyRequest().authenticated());                                   // 다른 모든 경로에는 로그인한 사용자만 접근 가능
+
+        //JWTFilter 등록
+        http
+                .addFilterBefore(new JWTFilter(jwtUtil), LoginFilter.class);
 
         http
                 .addFilterAt(new LoginFilter(authenticationManager(authenticationConfiguration), jwtUtil), UsernamePasswordAuthenticationFilter.class);
