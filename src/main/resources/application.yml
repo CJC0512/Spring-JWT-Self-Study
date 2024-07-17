@@ -20,3 +20,14 @@ spring:
       ddl-auto: none      # create ? none?? ????. ???? ???? ????.
       naming:
         physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+
+
+  jwt:
+    secret: vmfhaltmskdlstkfkdgodyroqkfwkdbalroqkfwkdbalaaaaaaaaaaaaaaaabbbbb
+
+#token:
+#  access-expiration-time: 43200000          # 12H
+#  refresh-expiration-time: 604800000        # 7D
+#  secret: ENC(QtQ/Bmzp7L8WsU/Q1mdcaforC0tm5fT/1AAO9sH8FvSqdifx3NUm2I6yPLoRwKWh6MgfbE2plQ/2OOoa9607h7GD05loh5LGI9of8t5WKHavDJiYuNEu28NYOxd8Bjs+fGs+IuiuJHg=)
+
+
